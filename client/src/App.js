@@ -16,7 +16,7 @@ function App() {
           <Route path='/new' element = {<NewProduct />} />
       </Routes>
     </div>
-  )
+  );
 }
 
 export default App;

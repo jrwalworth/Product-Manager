@@ -10,12 +10,13 @@ const PORT = 8000;
 //prep app 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
 app.use(cors({
     origin: "http://localhost:3000"
-}));
+}),);
 
 //import routes
-require('./routes/product.routes');
+require('./routes/product.routes')(app);
 
 //listen
 app.listen(PORT, () => {
