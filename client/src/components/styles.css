@@ -1,0 +1,30 @@
+/* START Header Styles */
+/* header {
+    background-color: darkolivegreen;
+    color: seashell;
+    padding: 20px;
+} */
+
+.nav-link {
+    color: rgb(105, 103, 103);
+    text-decoration: none;
+}
+
+.active {
+    /* color: crimson; */
+    font-weight: bolder;
+}
+/* END Header Styles */
+
+.input-area {
+    margin: 5px;
+    padding: 2%;
+    background: rgb(198, 197, 197);
+    border-radius: 5px;
+}
+
+.newProductForm {
+    width:60%;
+    margin: auto;
+    padding: 10px;
+}
