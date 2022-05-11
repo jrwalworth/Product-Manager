@@ -36,15 +36,15 @@ const NewProduct = () => {
 
     return (
         <form onSubmit={submitHandler} className="newProductForm">
-            <section className='input-area d-flex'>
+            <section className='input-area d-flex align-items-center'>
                 <label  className='form-label col-3' htmlFor="title">Title </label>
                 <input className="form-control" type="text" value={title} name='title' onChange={(e) => setTitle(e.target.value)}/>
             </section>
-            <section className='input-area d-flex'>
+            <section className='input-area d-flex align-items-center'>
                 <label className="col-3" htmlFor="description">Description </label>
                 <input className="form-control" type="text" value={description} name='description' onChange={(e) => setDescription(e.target.value)}/>
             </section>
-            <section className='input-area d-flex'>
+            <section className='input-area d-flex align-items-center'>
                 <label className="col-3" htmlFor="price">Price </label>
                 <input type="Number" className="form-control" value={price} name='price' onChange={(e) => setPrice(e.target.value)}/>
             </section>
