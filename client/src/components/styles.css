@@ -1,4 +1,4 @@
-/* START Header Styles */
+/* HEADER STYLES */
 /* header {
     background-color: darkolivegreen;
     color: seashell;
@@ -8,19 +8,40 @@
 .nav-link {
     color: rgb(105, 103, 103);
     text-decoration: none;
+    margin:0;
+    padding:.5em;
+}
+
+.nav-div {
+    color: rgb(105, 103, 103);
 }
 
 .active {
     /* color: crimson; */
     font-weight: bolder;
 }
-/* END Header Styles */
 
+.nav-search {
+    border-radius: 5rem;
+    padding-left: 15px;
+}
+/* END HEADER STYLES */
+
+/* FORM STYLES */
 .input-area {
     margin: 5px;
     padding: 2%;
     background: rgb(198, 197, 197);
     border-radius: 5px;
+    min-width: 220px;
+}
+
+.input-area label {
+    min-width: 120px;
+}
+
+.form-control {
+    min-width: 150px;
 }
 
 .newProductForm {
@@ -29,3 +50,64 @@
     padding: 10px;
 }
 
+
+/* END FORM STYLES */
+
+
+/* CARD STYLES */
+.container {
+    padding: 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+    margin: 10px;
+    padding: 5px;
+}
+
+.card-title {
+    background-color: rgb(34, 117, 211)
+}
+
+
+
+/* MEDIA QUERIES */
+@media only screen and (min-width: 1150px) {
+    .lg-1 {
+        width: 100%;
+    }
+    .sm-0 {
+        display: none;
+    }
+    
+}
+
+@media only screen and (max-width: 800px){
+    .nav-search {
+        display: none;
+    }
+    section{
+        display: block;
+    }
+    .col-3 {
+        display: block;
+    }
+    .card {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .cards {
+        display: block;
+    }
+    .lg-3 {
+        width: 75%;
+    }
+}
+
+/* END MEDIA QUERIES */

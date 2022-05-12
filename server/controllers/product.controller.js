@@ -3,23 +3,25 @@ const Product = require('../models/product.model');
 
 const createProduct = (req, res) => {
     Product.create(req.body).then((newProduct) => {
-        res.json({product: newProduct});
+        console.log(newProduct);
+        res.json(newProduct);
     }).catch((err) => {
         res.status(500).json({message:"Create Product failed.", error: err});
     });
 };
 
 const readAllProducts = (req, res) => {
-    Product.find({}).then((allProducts) => {
-        res.status(200).json({products: allProducts});
+    Product.find({}).then((products) => {
+        console.log(products);
+        res.status(200).json(products);
     }).catch((err) => {
-        res.status(400).json({message:"Get Products was not successful.", err});
+        res.status(400).json({message:"Get Products was not successful.", error: err});
     });
 };
 
 const readProductById = (req, res) => {
-    Product.findOne({_id: req.params.id}).then((product) => {
-        res.json({product: oneProduct});
+    Product.findOne({_id: req.params.id}).then((oneProduct) => {
+        res.json(oneProduct);
     }).catch((err) => {
         res.status(400).json({message: "Get Product by Id failed.", error: err});
     });
