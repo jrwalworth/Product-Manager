@@ -5,7 +5,6 @@ import ProductList from '../components/ProductList';
 
 const Main = (props) => {
     const [products, setProducts] = useState([]);
-    const [product, setProduct] = useState('');
 
     return (
         <div>

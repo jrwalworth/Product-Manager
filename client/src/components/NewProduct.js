@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
+import './styles.css'
 
 const NewProduct = (props) => {
     const {products, setProducts} = props;
@@ -18,17 +19,15 @@ const NewProduct = (props) => {
             price
         })
         .then((res) => {
-            //log response data
-            console.log(res);
-            console.log(res.data);
             //add product to productlist
-            setProducts([ res.data]);
+            setProducts([...products, res.data]);
+            console.log('Added: ', res.data);
             //reset form fields
             setTitle('');
             setDescription('');
             setPrice(0);
             //navigate to home page after submission
-            navigate('/');
+            // navigate('/');
         })
         .catch((err) => {
             console.log('Error', err);

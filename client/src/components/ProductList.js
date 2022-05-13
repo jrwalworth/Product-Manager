@@ -1,6 +1,7 @@
 import {useEffect} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import './styles.css'
 
 
 const ProductList = (props) => {
@@ -9,9 +10,7 @@ const ProductList = (props) => {
     useEffect(() => {
         axios.get("http://localhost:8000/api/products")
         .then((res) => {
-            console.log('response', res.data);
             setProducts(res.data);
-            
         })
         .catch((err) => console.log('Error getting products', err));
     }, []);
@@ -30,7 +29,7 @@ const ProductList = (props) => {
                                 Description: {product.description}
                             </p>
                             <h5>$ {product.price}</h5>
-                            <Link to={`/product/${product._id}`}>{product.title} details...</Link>
+                            <Link to={`products/${product._id}`}>{product.title} details...</Link>
                         </div>
                     )) 
                 }
