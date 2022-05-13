@@ -9,7 +9,7 @@ function Header() {
             <Navbar className="m-2 d-flex justify-content-between" variant="dark" bg="dark" expand="lg">
                 <Navbar.Brand className="ms-3" href="/">Product Manager</Navbar.Brand>
                 <div className="d-flex justify-content-center align-items-center">
-                    <NavLink className="nav-link small" to="/">Home</NavLink>
+                    {/* <NavLink className="nav-link small" to="/">Home</NavLink> */}
                     {/* <span className="small nav-div"> | </span>
                     <NavLink className="nav-link small" to="/">API</NavLink> */}
                 </div>

@@ -1,20 +1,31 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {useParams} from 'react-router-dom';
+import {useParams, Link, useNavigate} from 'react-router-dom';
 import './styles.css'
 
 function Product(props) {
     const [product, setProduct] = useState({});
     const {id} = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/products/' + id)
         .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             setProduct(res.data);
         })
         .catch(err => console.log('Error', err));
     }, []);
+
+
+    const deleteProduct = (productId) => {
+        axios.delete('http://localhost:8000/api/products/' + productId)
+        .then((res) => {
+            navigate('/');
+            console.log('Deleted:', res.data);
+        })
+        .catch(err => console.log('Error', err));
+    }
 
     return (
         <div className='details'>
@@ -32,8 +43,8 @@ function Product(props) {
                 </div>
             </div>
             <div>
-                <button className="btn btn-outline-dark m-1">Edit</button>
-                <button className="btn btn-outline-dark m-1">Delete</button>
+                <Link to={"/products/edit/" + product._id} className="btn btn-sm btn-outline-dark m-1" >Edit</Link>
+                <button onClick={(e) => {deleteProduct(product._id)}} className="btn btn-sm btn-outline-dark m-1" >Delete</button>
             </div>
         </div>
     )

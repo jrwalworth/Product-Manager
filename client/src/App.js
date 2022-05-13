@@ -6,6 +6,7 @@ import Main from './views/Main';
 import ProductList from './components/ProductList';
 import Product from './components/Product';
 import NewProduct from './components/NewProduct';
+import Update from './components/Update';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Routes>
           <Route path='/' element={<Main />} default />
           <Route path='/products/:id' element = {<Product />} />
+          <Route path='/products/edit/:id' element = {<Update />} />
           <Route path='/products' element = {<ProductList />} />
           <Route path='/new' element = {<NewProduct />} />
       </Routes>

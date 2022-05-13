@@ -30,17 +30,17 @@ const readProductById = (req, res) => {
 const updateProductById = (req, res) => {
     Product.updateOne({_id: req.params.id},
         req.body,
-        {new: true, runValidators:" true"})
-    .then((product) => {
-        res.json(product);
+        {new: true, runValidators:"true"})
+    .then((updatedProduct) => {
+        res.json(updatedProduct);
     }).catch((err) => {
         res.status(400).json({message: "Update Product failed.", error: err});
     });
 };
 
-const deleteProductById = (req, res) => {
+const destroyProductById = (req, res) => {
     Product.deleteOne({_id: req.params.id}).then((product) => {
-        res.json({product: product});
+        res.json(product);
     }).catch((err) => {
         res.status(400).json({message: "Delete Product failed.", error: err});
     });
@@ -52,5 +52,5 @@ module.exports = {
     readAllProducts,
     readProductById,
     updateProductById,
-    deleteProductById,
+    destroyProductById,
 };
