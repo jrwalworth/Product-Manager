@@ -15,6 +15,7 @@ const ProductList = (props) => {
         .catch((err) => console.log('Error getting products', err));
     }, []);
     // console.log('products:', products);
+    
     const deleteProduct = (productId) => {
         axios.delete('http://localhost:8000/api/products/' + productId)
         .then((res) => {
